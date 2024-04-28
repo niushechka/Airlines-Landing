@@ -1,0 +1,22 @@
+div.jumbotron.alaska-travel {
+    color: #fff;
+    text-align: center;
+    /*background: url('hero-background-travel.jpg');*/
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 125px;
+}
+
+h1.jumbo-title,
+h2.jumbo-title,
+h3.jumbo-title {
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+p.jumbo-subtitle {
+    max-width: 600px;
+    margin: 25px auto;
+    color: #544e4e;
+}

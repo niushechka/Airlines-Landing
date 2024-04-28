@@ -1,0 +1,11 @@
+@media (min-width: 300px) {
+    .main-content {
+        min-height: calc(100vh - 250px);
+        padding: 75px 0 0 0;
+        background-repeat: no-repeat;
+    }
+}
+
+.main-content {
+    min-height: calc(100vh - 417.7px);
+}

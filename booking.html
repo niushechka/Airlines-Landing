@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Booking</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Amaranth"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lora"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/-Filterable-Gallery-with-Lightbox-BS4-.css"
+    />
+    <link rel="stylesheet" href="assets/css/Article-List.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css" />
+    <link rel="stylesheet" href="assets/css/Main-Content.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/Pretty-Product-List.css" />
+    <link rel="stylesheet" href="assets/css/Jumbotron-Main.css" />
+  </head>
+
+  <body onload="Authentication()">
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+      <div class="container-fluid">
+        <a href="index.html"
+          ><img src="assets/img/logo-AS-tagline.svg" style="width: 100px" /></a
+        ><button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol-1"
+          data-aos="fade-left"
+          data-aos-delay="1000"
+          data-aos-once="true"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navcol-1">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item" role="presentation"></li>
+            <li class="nav-item dropdown">
+              <a
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
+                aria-expanded="false"
+                id="currentUser"
+                href="#"
+                style="font-family: Amaranth, sans-serif"
+                >Current User</a
+              >
+              <div
+                class="dropdown-menu text-center shadow-lg"
+                role="menu"
+                style="
+                  background-color: rgba(241, 237, 228, 0.35);
+                  color: rgb(0, 123, 255);
+                "
+              >
+                <a
+                  class="dropdown-item"
+                  role="presentation"
+                  href="cart.html"
+                  style="
+                    background-color: rgba(255, 255, 255, 0);
+                    font-family: Amaranth, sans-serif;
+                    font-size: 20px;
+                  "
+                  >Cart<i
+                    class="fas fa-shopping-cart"
+                    style="margin-left: 2px"
+                  ></i
+                ></a>
+                <a
+                  class="nav-link"
+                  href="packages.html"
+                  style="
+                    color: #ffffff;
+                    background-color: rgba(255, 255, 255, 0);
+                    font-family: Amaranth, sans-serif;
+                  "
+                  >Packages</a
+                >
+              </div>
+            </li>
+            <li class="nav-item" role="presentation"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="text-center main-content">
+      <div class="container booking-heading">
+        <h1
+          class="display-2 text-center text-primary"
+          style="margin: 0px; padding: 0px 15px"
+        >
+          Book Your Flight Today!
+        </h1>
+        <p class="lead booking-heading-paragraph">
+          What are you waiting for? Book your next holdiay with us and make
+          memories that will last a lifetime!
+        </p>
+      </div>
+      <div
+        class="container booking"
+        style="font-family: Amaranth, sans-serif; height: auto"
+      >
+        <div id="booking" class="section">
+          <div class="section-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="booking-form">
+                    <form action="cart.html">
+                      <div class="form-group">
+                        <div class="form-checkbox">
+                          <label for="roundtrip">
+                            <input
+                              type="radio"
+                              id="roundtrip"
+                              name="flight-type"
+                              onclick="EnableReturnDate()"
+                            />
+                            <span></span>Roundtrip
+                          </label>
+                          <label for="one-way">
+                            <input
+                              type="radio"
+                              id="one-way"
+                              name="flight-type"
+                              onclick="DisableReturnDate()"
+                            />
+                            <span></span>One way
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <span class="form-label">Flying from</span>
+                            <select id="origin" class="form-control" required>
+                              <option value="" disabled selected hidden>
+                                City or Airport
+                              </option>
+                              <option value="Paris Airport Shuttle">
+                                Paris Airport Shuttle
+                              </option>
+                              <option value="John F. Kennedy International Airport">
+								John F. Kennedy International Airport</option>
+                              <option value="Los Angeles International Airport">
+								Los Angeles International Airport
+                              </option>
+                              <option value="Madrid-Barajas Airport">
+                                Madrid-Barajas Airport
+                              </option>
+                              <option value="Cancun International Airport">
+								Cancun International Airport
+                              </option>
+                              <option value="Sheremetyevo International Airport">
+								Sheremetyevo International Airport</option>
+                              <option value="Rome Fiumicino Airport">
+                                Rome Fiumicino Airport
+                              </option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <span class="form-label">Flyning to</span>
+                            <select
+                              id="destination"
+                              class="form-control"
+                              required
+                            >
+                              <option value="" disabled selected hidden>
+                                City or Airport
+                              </option>
+                              <option value="Madrid-Barajas Airport">
+                                Madrid-Barajas Airport
+                              </option>
+                              <option value="Sheremetyevo International Airport">
+								Sheremetyevo International Airport</option>
+                              <option value="John F. Kennedy International Airport">
+                                John F. Kennedy International Airport
+                              </option>
+                              <option value="Paris Airport Shuttle">
+                                Paris Airport Shuttle
+                              </option>
+                              <option value="Los Angeles International Airport">
+								Los Angeles International Airport
+                              </option>
+                              <option value="Cancun International Airport">
+								Cancun International Airport</option>
+                              <option value="Rome Fiumicino Airport">
+                                Rome Fiumicino Airport
+                              </option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <span class="form-label">Departing</span>
+                            <input
+                              id="departdate"
+                              class="form-control"
+                              type="date"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6" name="returningCol">
+                          <div class="form-group">
+                            <span class="form-label">Returning</span>
+                            <input
+                              id="returndate"
+                              class="form-control"
+                              type="date"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <span class="form-label">Adults (18+)</span>
+                            <select id="adultpass" class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <span class="form-label">Children (0-17)</span>
+                            <select id="childpass" class="form-control">
+                              <option>0</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <span class="form-label">Travel class</span>
+                            <select id="flightclass" class="form-control">
+                              <option>Economy class</option>
+                              <option>Business class</option>
+                              <option>First class</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-btn">
+                        <button
+                          id="btnbookflight"
+                          onclick="SaveBookingDetails()"
+                          class="submit-btn"
+                          type="submit"
+                        >
+                          Book flight
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="footer-dark" style="font-family: Amaranth, sans-serif">
+		<footer>
+		  <div class="container">
+			<div class="row">
+			  <div class="col-sm-6 col-md-3 item">
+				<h3>Services</h3>
+				<ul>
+				  <li><a href="claims.html">Claims</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-6 col-md-3 item">
+				<h3>About</h3>
+				<ul>
+				  <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">About us</a></li>
+				  <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">Careers</a></li>
+				</ul>
+			  </div>
+			  <div class="col-md-6 item text">
+				<h3>Alaska Airlines</h3>
+				<p>
+				  Alaska Airlines is the main airline of the United States of
+				  America with headquarters in SeaTac, a suburb of Seattle
+				  (Washington State), USA.
+				</p>
+				<p>
+				  The airline uses Seattle/Tacoma International Airport and Theda
+				  Stevens Anchorage International Airport as its main transit
+				  hubs; additional hubs are located at Portland International
+				  Airport and Los Angeles International Airport.
+				</p>
+			  </div>
+			  <div class="col item social">
+				<a href="https://www.facebook.com/alaskaairlines"
+				  ><i class="icon ion-social-facebook"></i
+				></a>
+				<a href="https://twitter.com/alaskaair"
+				  ><i class="icon ion-social-twitter"></i
+				></a>
+				<a href="https://www.instagram.com/alaskaair/"
+				  ><i class="icon ion-social-instagram"></i
+				></a>
+			  </div>
+			</div>
+			<p class="copyright">Alaska Airlines &copy; 2024</p>
+		  </div>
+		</footer>
+	  </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/-Filterable-Gallery-with-Lightbox-BS4-.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

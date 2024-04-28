@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Alaska Airlines</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Amaranth"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lora"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/-Filterable-Gallery-with-Lightbox-BS4-.css"
+    />
+    <link rel="stylesheet" href="assets/css/Article-List.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css" />
+    <link rel="stylesheet" href="assets/css/Main-Content.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/Pretty-Product-List.css" />
+    <link rel="stylesheet" href="assets/css/Jumbotron-Main.css" />
+  </head>
+  <body>
+    <header class="container-fluid">
+      <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+        <div class="container-fluid">
+          <a href="#"
+            ><img
+              src="assets/img/logo-AS-tagline.svg"
+              style="width: 100px" /></a
+          ><button
+            data-toggle="collapse"
+            class="navbar-toggler"
+            data-target="#navcol-1"
+            data-aos="fade-left"
+            data-aos-delay="1000"
+            data-aos-once="true"
+          >
+            <span class="sr-only">Toggle navigation</span
+            ><span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item text-right" role="presentation">
+                <a class="nav-link active" href="#"
+                  ><button
+                    class="btn btn-outline-primary"
+                    data-toggle="modal"
+                    data-target="#signup"
+                    type="button"
+                  >
+                    Log In
+                  </button></a
+                >
+              </li>
+              <li class="nav-item text-right" role="presentation">
+                <a class="nav-link active" href="#"
+                  ><button
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#signin"
+                    type="button"
+                  >
+                    Sign Up
+                  </button></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal fade" role="dialog" tabindex="-1" id="signup">
+        <div
+          class="modal-dialog modal-sm modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Log in</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="text-primary input-group-text"
+                        ><i class="fa fa-envelope-o"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="email"
+                      id="userEmail"
+                      required=""
+                      placeholder="Email"
+                    />
+                    <div class="input-group-append"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="text-primary input-group-text"
+                        ><i class="fa fa-lock"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="password"
+                      id="userPassword"
+                      required=""
+                      placeholder="Password"
+                    />
+                    <div class="input-group-append"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button
+                    class="btn btn-primary btn-lg text-white"
+                    id="btnLogin"
+                    style="width: 100%"
+                    type="button"
+                    onclick="validate()"
+                  >
+                    Log in
+                  </button>
+                </div>
+              </form>
+              <hr style="background-color: #bababa" />
+              <p class="text-center">
+                Don't have an account? &nbsp;<a
+                  class="text-decoration-none"
+                  data-dismiss="modal"
+                  data-toggle="modal"
+                  data-target="#signin"
+                  href="#"
+                  >Sign Up</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" role="dialog" tabindex="-1" id="signin">
+        <div
+          class="modal-dialog modal-sm modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Sign Up Now</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="mt-4">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="text-primary input-group-text"
+                        ><i class="fa fa-user-o"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="newUserName"
+                      required=""
+                      placeholder="Full Name"
+                    />
+                    <div class="input-group-append"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="text-primary input-group-text"
+                        ><i class="fa fa-envelope-o"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="email"
+                      id="newUserEmail"
+                      required=""
+                      placeholder="Email"
+                    />
+                    <div class="input-group-append"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="text-primary input-group-text"
+                        ><i class="fa fa-lock"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="password"
+                      id="newUserPwd"
+                      required=""
+                      placeholder="Password"
+                    />
+                    <div class="input-group-append"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="formCheck-1"
+                      required=""
+                    /><label class="form-check-label" for="formCheck-1"
+                      >Agree to terms and conditions.</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button
+                    class="btn btn-primary btn-lg text-white"
+                    style="width: 100%"
+                    type="button"
+                    onclick="signUp()"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </form>
+              <hr style="background-color: #bababa" />
+              <p class="text-center">
+                Already have an Account?&nbsp;<a
+                  class="text-decoration-none"
+                  data-dismiss="modal"
+                  data-toggle="modal"
+                  data-target="#signup"
+                  href="#"
+                  >Log In</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="container booking" style="position: relative; left: -12px;">
+        <div class="container-book">
+        <div
+          class="jumbotron alaska-travel"
+          style="background-color: #fff; padding: auto 0px;"
+        >
+          <h1 class="jumbo-title" style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81)">
+            We make the world a smaller place
+          </h1>
+          <h4 class="jumbo-subtitle" style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81);">
+            Fly anywhere, any day for as low as $99
+          </h4>
+          <p>
+            <a
+              id="book-now"
+              class="btn btn-primary btn-lg"
+              href="#"
+              style="font-family: Amaranth, sans-serif"
+              >Book Now</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="article-list" style="background-color: rgba(123, 164, 209, 0)">
+      <div class="container">
+        <div class="intro">
+          <h1 class="text-center" style="color: rgb(19, 0, 81);">Hotspots!</h1>
+          <h6 class="text-center" style="color: rgb(19, 0, 81);">Hotspots are popular travel destinations known for their volcanic activity and natural beauty.</h6>
+          <h6 class="text-center" style="color: rgb(19, 0, 81);"> Book your tickets now and have a great holiday!</h6>
+        </div>
+        <div class="row articles">
+          <div class="col-sm-6 col-md-4 item">
+            <a href="packages.html"><img class="img-fluid" src="assets/img/paris.jpg" /></a>
+            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
+            <p class="description" style="color: rgb(19, 0, 81);"></p>
+          </div>
+          <div class="col-sm-6 col-md-4 item">
+            <a href="packages.html"
+              ><img class="img-fluid" src="assets/img/maldives.jpg"
+            /></a>
+            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
+            <p class="description" style="color: rgb(19, 0, 81);"></p>
+          </div>
+          <div class="col-sm-6 col-md-4 item">
+            <a href="packages.html"><img class="img-fluid" src="assets/img/ny4.jpeg"
+            /></a>
+            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
+            <p class="description" style="color: rgb(19, 0, 81);"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="footer-dark" style="font-family: Amaranth, sans-serif">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="claims.html">Claims</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>About</h3>
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">About us</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">Careers</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <h3>Alaska Airlines</h3>
+              <p>
+                Alaska Airlines is the main airline of the United States of
+                America with headquarters in SeaTac, a suburb of Seattle
+                (Washington State), USA.
+              </p>
+              <p>
+                The airline uses Seattle/Tacoma International Airport and Theda
+                Stevens Anchorage International Airport as its main transit
+                hubs; additional hubs are located at Portland International
+                Airport and Los Angeles International Airport.
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="https://www.facebook.com/alaskaairlines"
+                ><i class="icon ion-social-facebook"></i
+              ></a>
+              <a href="https://twitter.com/alaskaair"
+                ><i class="icon ion-social-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/alaskaair/"
+                ><i class="icon ion-social-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <p class="copyright">Alaska Airlines &copy; 2024</p>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/-Filterable-Gallery-with-Lightbox-BS4-.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/parserXML.js"></script>
+  </body>
+</html>
