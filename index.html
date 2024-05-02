@@ -63,7 +63,7 @@
             ><span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav ml-auto">
+            <ul class="nav navbar-nav ml-auto text-right" id="currentUser">
               <li class="nav-item text-right" role="presentation">
                 <a class="nav-link active" href="#"
                   ><button
@@ -283,62 +283,76 @@
     </header>
 
     <div class="main-content">
-      <div class="container booking" style="position: relative; left: -12px;">
+      <div class="container booking">
         <div class="container-book">
-        <div
-          class="jumbotron alaska-travel"
-          style="background-color: #fff; padding: auto 0px;"
-        >
-          <h1 class="jumbo-title" style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81)">
-            We make the world a smaller place
-          </h1>
-          <h4 class="jumbo-subtitle" style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81);">
-            Fly anywhere, any day for as low as $99
-          </h4>
-          <p>
-            <a
-              id="book-now"
-              class="btn btn-primary btn-lg"
-              href="#"
-              style="font-family: Amaranth, sans-serif"
-              >Book Now</a
+          <div
+            class="jumbotron alaska-travel"
+            style="background-color: #fff; padding: auto 0px"
+          >
+            <h1
+              class="jumbo-title"
+              style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81)"
             >
-          </p>
+              We make the world a smaller place
+            </h1>
+            <h4
+              class="jumbo-subtitle"
+              style="font-family: Amaranth, sans-serif; color: rgb(19, 0, 81)"
+            >
+              Fly anywhere, any day for as low as $99
+            </h4>
+            <p>
+              <a
+                id="book-now"
+                class="btn btn-primary btn-lg"
+                href="#"
+                style="font-family: Amaranth, sans-serif"
+                >Book Now</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="article-list">
+          <div class="container">
+            <div class="intro">
+              <h1 class="text-center" style="color: rgb(19, 0, 81)">Hotspots!</h1>
+              <h6 class="text-center" style="color: rgb(19, 0, 81)">
+                Hotspots are popular travel destinations known for their volcanic
+                activity and natural beauty.
+              </h6>
+              <h6 class="text-center" style="color: rgb(19, 0, 81)">
+                Book your tickets now and have a great holiday!
+              </h6>
+            </div>
+            <div class="row articles">
+              <div class="col-sm-6 col-md-4 item">
+                <a href="packages.html"
+                  ><img class="img-fluid" src="assets/img/paris.jpg"
+                /></a>
+                <h3 class="name" style="color: rgb(0, 0, 0)"></h3>
+                <p class="description" style="color: rgb(19, 0, 81)"></p>
+              </div>
+              <div class="col-sm-6 col-md-4 item">
+                <a href="packages.html"
+                  ><img class="img-fluid" src="assets/img/maldives.jpg"
+                /></a>
+                <h3 class="name" style="color: rgb(0, 0, 0)"></h3>
+                <p class="description" style="color: rgb(19, 0, 81)"></p>
+              </div>
+              <div class="col-sm-6 col-md-4 item">
+                <a href="packages.html"
+                  ><img class="img-fluid" src="assets/img/ny4.jpeg"
+                /></a>
+                <h3 class="name" style="color: rgb(0, 0, 0)"></h3>
+                <p class="description" style="color: rgb(19, 0, 81)"></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    
-    <div class="article-list" style="background-color: rgba(123, 164, 209, 0)">
-      <div class="container">
-        <div class="intro">
-          <h1 class="text-center" style="color: rgb(19, 0, 81);">Hotspots!</h1>
-          <h6 class="text-center" style="color: rgb(19, 0, 81);">Hotspots are popular travel destinations known for their volcanic activity and natural beauty.</h6>
-          <h6 class="text-center" style="color: rgb(19, 0, 81);"> Book your tickets now and have a great holiday!</h6>
-        </div>
-        <div class="row articles">
-          <div class="col-sm-6 col-md-4 item">
-            <a href="packages.html"><img class="img-fluid" src="assets/img/paris.jpg" /></a>
-            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
-            <p class="description" style="color: rgb(19, 0, 81);"></p>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <a href="packages.html"
-              ><img class="img-fluid" src="assets/img/maldives.jpg"
-            /></a>
-            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
-            <p class="description" style="color: rgb(19, 0, 81);"></p>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <a href="packages.html"><img class="img-fluid" src="assets/img/ny4.jpeg"
-            /></a>
-            <h3 class="name" style="color: rgb(0, 0, 0);"></h3>
-            <p class="description" style="color: rgb(19, 0, 81);"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+
+
     <div class="footer-dark" style="font-family: Amaranth, sans-serif">
       <footer>
         <div class="container">
@@ -352,8 +366,20 @@
             <div class="col-sm-6 col-md-3 item">
               <h3>About</h3>
               <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">About us</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Alaska_Airlines" target="_blank">Careers</a></li>
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Alaska_Airlines"
+                    target="_blank"
+                    >About us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Alaska_Airlines"
+                    target="_blank"
+                    >Careers</a
+                  >
+                </li>
               </ul>
             </div>
             <div class="col-md-6 item text">
@@ -371,13 +397,13 @@
               </p>
             </div>
             <div class="col item social">
-              <a href="https://www.facebook.com/alaskaairlines"
+              <a href="https://www.facebook.com/alaskaairlines" target="_blank"
                 ><i class="icon ion-social-facebook"></i
               ></a>
-              <a href="https://twitter.com/alaskaair"
+              <a href="https://twitter.com/alaskaair" target="_blank"
                 ><i class="icon ion-social-twitter"></i
               ></a>
-              <a href="https://www.instagram.com/alaskaair/"
+              <a href="https://www.instagram.com/alaskaair/" target="_blank"
                 ><i class="icon ion-social-instagram"></i
               ></a>
             </div>

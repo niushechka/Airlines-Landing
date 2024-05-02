@@ -73,6 +73,7 @@ function validate() {
 	var savePassword = sessionStorage.getItem("password");
 
 	if (loginEmail == savedEmail && loginPassword == savePassword) {
+
 		alert("Welcome " + sessionStorage.getItem("username"));
 
 		setTimeout(function () {
@@ -109,7 +110,7 @@ var email = sessionStorage.getItem("email");
 		}
 		else if (email !== null) {
 			setTimeout(function () {
-				window.location = "packages.html";
+				window.location = "booking.html";
 			}, 1);
 		}
 	})
@@ -121,7 +122,52 @@ function displayUser() {
 	
 
 	if (user != null) {
-		currentUser.innerHTML = user;
+		currentUser.innerHTML = `
+		<li class="nav-item dropdown">
+		<a
+		  class="dropdown-toggle nav-link"
+		  data-toggle="dropdown"
+		  aria-expanded="false"
+		  id="currentUser"
+		  href="#"
+		  style="font-family: Amaranth, sans-serif"
+		  >${user}</a
+		>
+		<div
+		  class="dropdown-menu text-center shadow-lg"
+		  role="menu"
+		  style="
+			background-color: rgba(241, 237, 228, 0.35);
+			color: rgb(0, 123, 255);
+		  "
+		>
+		  <a
+			class="dropdown-item"
+			role="presentation"
+			href="cart.html"
+			style="
+			  background-color: rgba(255, 255, 255, 0);
+			  font-family: Amaranth, sans-serif;
+			  font-size: 20px;
+			"
+			>Cart<i
+			  class="fas fa-shopping-cart"
+			  style="margin-left: 2px"
+			></i
+		  ></a>
+		  <a
+			class="dropdown-item"
+			role="presentation"
+			href="booking.html"
+			style="
+			  background-color: rgba(255, 255, 255, 0);
+			  font-family: Amaranth, sans-serif;
+			  font-size: 20px;
+			"
+			>Booking</a
+		  >
+		</div>
+	  </li>`;
 	}
 }
 
@@ -256,3 +302,5 @@ function claimConfirmation() {
 		window.location.href = "index.html";
 	}, 1000);
 }
+
+displayUser()
