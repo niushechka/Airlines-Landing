@@ -1,38 +1,32 @@
 function signUp() {
-	//get new user data from sign up form
 	var newUser = document.getElementById("newUserName").value;
 	var newEmail = document.getElementById("newUserEmail").value;
 	var newPassword = document.getElementById("newUserPwd").value;
 	var accept = document.getElementById("formCheck-1");
 
-    // Флаг для проверки правильности ввода
-    let valid = true;
+	let valid = true;
 
-    // Проверка заполнения всех обязательных полей
-    if (!newUser) {
-        alert("Full name is required.");
-        valid = false;
-    }
+	if (!newUser) {
+		alert("Full name is required.");
+		valid = false;
+	}
 
-    // Проверка корректности формата электронной почты
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(newEmail)) {
-        alert("Please enter a valid email address.");
-        valid = false;
-    }
+	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	if (!emailPattern.test(newEmail)) {
+		alert("Please enter a valid email address.");
+		valid = false;
+	}
 
-    // Проверка длины пароля
-    const minPasswordLength = 6; // Минимальная длина пароля
-    if (newPassword.length < minPasswordLength) {
-        alert(`Password must be at least ${minPasswordLength} characters long.`);
-        valid = false;
-    }
+	const minPasswordLength = 6;
+	if (newPassword.length < minPasswordLength) {
+		alert(`Password must be at least ${minPasswordLength} characters long.`);
+		valid = false;
+	}
 
-    // Проверка согласия с условиями использования
-    if (!accept) {
-        alert("You must agree to the terms and conditions.");
-        valid = false;
-    }
+	if (!accept) {
+		alert("You must agree to the terms and conditions.");
+		valid = false;
+	}
 
 	if (!accept.checked || !valid) {
 		alert("Please fill all neccessary fields and accept our terms and agreement");
@@ -40,7 +34,6 @@ function signUp() {
 		return false;
 	} else if (accept.checked) {
 		alert("Thank you for signing up!");
-		//save user data to localstorage
 		sessionStorage.setItem("username", newUser);
 		sessionStorage.setItem("password", newPassword);
 		sessionStorage.setItem("email", newEmail);
@@ -55,19 +48,19 @@ function validate() {
 	var loginEmail = document.getElementById("userEmail").value;
 	var loginPassword = document.getElementById("userPassword").value;
 
-    let valid = true;
+	let valid = true;
 
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(loginEmail)) {
-        alert("Please enter a valid email address.");
-        valid = false;
-    }
+	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	if (!emailPattern.test(loginEmail)) {
+		alert("Please enter a valid email address.");
+		valid = false;
+	}
 
-    const minPasswordLength = 6; 
-    if (loginPassword.length < minPasswordLength) {
-        alert(`Password must be at least ${minPasswordLength} characters long.`);
-        valid = false;
-    }
+	const minPasswordLength = 6;
+	if (loginPassword.length < minPasswordLength) {
+		alert(`Password must be at least ${minPasswordLength} characters long.`);
+		valid = false;
+	}
 
 	var savedEmail = sessionStorage.getItem("email");
 	var savePassword = sessionStorage.getItem("password");
@@ -89,7 +82,7 @@ function validate() {
 
 function Authentication() {
 	var email = sessionStorage.getItem("email");
-	
+
 	if (email == null) {
 		alert("Please login!");
 		setTimeout(function () {
@@ -103,23 +96,23 @@ function Authentication() {
 var bookNow = document.getElementById('book-now')
 var email = sessionStorage.getItem("email");
 
-	
-	bookNow.addEventListener('click', () => {
-		if (email == null) {
-			alert("Please login!");
-		}
-		else if (email !== null) {
-			setTimeout(function () {
-				window.location = "booking.html";
-			}, 1);
-		}
-	})
+
+bookNow.addEventListener('click', () => {
+	if (email == null) {
+		alert("Please login!");
+	}
+	else if (email !== null) {
+		setTimeout(function () {
+			window.location = "booking.html";
+		}, 1);
+	}
+})
 
 
 function displayUser() {
 	var user = sessionStorage.getItem("username");
 	var currentUser = document.getElementById("currentUser");
-	
+
 
 	if (user != null) {
 		currentUser.innerHTML = `
@@ -210,7 +203,6 @@ function SaveBookingDetails() {
 
 function Checkout() {
 	displayUser();
-	/* get the fields needed */
 
 	var passenger = document.getElementById("checkout-name");
 	var email = document.getElementById("checkout-email");
@@ -222,10 +214,8 @@ function Checkout() {
 	var checkClass = document.getElementById("checkout-class");
 	var total = document.getElementById("checkout-total");
 
-	/* Get data from localStorage */
 	var username = sessionStorage.getItem("username");
 	var getEmail = sessionStorage.getItem("email")
-	// var opt = localStorage.getItem("flightOption");
 	var org = sessionStorage.getItem("origin");
 	var dest = sessionStorage.getItem("destination");
 	var frDate = sessionStorage.getItem("departing");
@@ -234,7 +224,6 @@ function Checkout() {
 	var child = sessionStorage.getItem("children");
 	var flightClass = sessionStorage.getItem("class");
 
-	/* Set details with data from localStorage */
 	passenger.innerHTML = username;;
 	email.innerHTML = getEmail;
 	var price = 99.99;
@@ -294,13 +283,6 @@ function Confirmation() {
 
 	confirmTrans.innerHTML = tNum;
 	confrimEmail.innerHTML = email;
-}
-
-function claimConfirmation() {
-	alert("Thank you! Your claim has been submitted.\nRedirecting to homepage...");
-	setTimeout(function () {
-		window.location.href = "index.html";
-	}, 1000);
 }
 
 displayUser()

@@ -212,14 +212,12 @@ body.hidden-scroll {
     -ms-touch-action: none;
     touch-action: none;
     z-index: 10000;
-    /*border: 1px solid #ddd;*/
 }
 
 .sl-wrapper .sl-image img {
     margin: 0;
     padding: 15px;
     display: block;
-    /*border: 0;*/
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .1);
     box-shadow: 0 0 15px rgba(0, 0, 0, .1);
     background: #fff;
@@ -296,11 +294,6 @@ body.hidden-scroll {
     left: 15px;
     right: 15px;
     text-align: center;
-    /*-webkit-animation: opacity .6s ease-out;*/
-    /*-moz-animation: opacity .6s ease-out;*/
-    /*-ms-animation: opacity .6s ease-out;*/
-    /*-o-animation: opacity .6s ease-out;*/
-    /*animation: opacity .6s ease-out;*/
 }
 
 .sl-wrapper .sl-image .sl-caption.pos-top {
